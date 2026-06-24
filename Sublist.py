@@ -12,6 +12,4 @@ def sublist(list_one, list_two):
     return SUBLIST
   elif s_list_two in s_list_one: 
     return SUPERLIST 
-  return UNEQUAL 
-
-            
+  return UNEQUAL
