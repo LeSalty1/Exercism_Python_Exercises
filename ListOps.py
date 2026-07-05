@@ -28,6 +28,21 @@ def map(function, list):
         mapping += [function(item)]
     return mapping
 
+
+def foldl(function, list, initial):
+    tot = initial
+    for element in list: 
+        tot = function(tot, element)
+    return tot 
+
+
+def foldr(function, list, initial):
+    tot = initial 
+    for element in list[-1::-1]: 
+        tot = function(tot, element)
+    return tot
+
+
 def reverse(list):
     rev_list = []
     for item in list[-1::-1]: 
