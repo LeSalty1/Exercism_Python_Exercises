@@ -1,8 +1,20 @@
-# This is still a work in-progress 
 # The intent is to be able to encode/decode data already optimal for run-length encoding. 
+import string as st
 def decode(string):
-    if string = "": 
-        return ""
+    if string == "": 
+        return "" 
+    stored_numbs = ""
+    ret_string = ""
+    for char in string: 
+        if char.isnumeric(): 
+            stored_numbs += char 
+        elif char.isalpha() or char in st.whitespace: 
+            if len(stored_numbs) == 0: 
+                ret_string += char 
+            else: 
+                ret_string += char * int(stored_numbs)
+                stored_numbs = ""
+    return ret_string
     
 
 def encode(string):
@@ -30,4 +42,6 @@ def encode(string):
         code += str(count) + previous
     return code
         
+        
+
         
